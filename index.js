@@ -34,6 +34,10 @@ client.connect(err => {
     console.log(newBooking);
   })
 
+  app.get('/', (req, res) => {
+    res.send('working')
+  })
+
   app.get('/bookings', (req, res) => {
     const bearer = req.headers.authorization;
     if (bearer && bearer.startsWith('Bearer ')) {
